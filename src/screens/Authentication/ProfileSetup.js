@@ -201,7 +201,7 @@ const ProfileSetup = ({navigation, route}) => {
         </View>
       </ScrollView>
 
-      {/* Keyboard Handler for show and hide footer button */}
+      {/* Keyboard Handler for show and hide footer  button */}
       {keyboardStatus ? (
         <></>
       ) : (
