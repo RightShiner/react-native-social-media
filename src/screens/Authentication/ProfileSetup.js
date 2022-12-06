@@ -23,6 +23,7 @@ import CustomLoader from '../../components/CustomLoader';
 import CustomAlertMessage from '../../components/CustomAlertMessage';
 
 const ProfileSetup = ({navigation, route}) => {
+  console.log('Props: ', route?.params?.props);
   const [keyboardStatus, setKeyboardStatus] = useState(false);
   const [image, setImage] = useState('');
   const [number, setNumber] = useState('');
@@ -212,11 +213,14 @@ const ProfileSetup = ({navigation, route}) => {
               Name={AppStrings.Complete_Setup}
               TextColor={constants.Colors.White}
               OnPress={() => {
-                profileSetupApiCall();
-                // navigation.reset({
-                //   index: 0,
-                //   routes: [{name: 'Login'}],
-                // });
+                route?.params?.props
+                  ? route?.params?.props === 'client'
+                    ? navigation.reset({
+                        index: 0,
+                        routes: [{name: 'Login'}],
+                      })
+                    : profileSetupApiCall()
+                  : '';
               }}
             />
           </View>
