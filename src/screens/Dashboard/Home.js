@@ -5,16 +5,13 @@ import CustomBody from '../../components/CustomBody';
 import {useSelector} from 'react-redux';
 
 const Home = ({navigation}) => {
-  const UserData = useSelector(e => e?.UserDataReducer?.user_details);
-  console.log('User Data: ', UserData);
-
   return (
     <View
       style={{
         flex: 1,
         backgroundColor: 'white',
       }}>
-      <CustomHeader />
+      <CustomHeader props={1} />
       <CustomBody onPress={() => {}} />
     </View>
   );

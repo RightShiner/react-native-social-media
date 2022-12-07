@@ -56,6 +56,9 @@ export const Images = {
   Profile: require('../assets/profile.png'),
   Black_Logo: require('../assets/Black_Logo.png'),
   Right_arrow: require('../assets/right_arrow.png'),
+  Left_arrow: require('../assets/left_arrow.png'),
+  LogOut: require('../assets/logout.png'),
+  Send_Mail: require('../assets/send_mail.png'),
 };
 
 // Storage Key Id for Get/Set Values in Async Storage

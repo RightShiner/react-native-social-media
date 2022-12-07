@@ -176,6 +176,11 @@ export const AppStrings = {
   Case_Management: 'CASE MANAGEMENT',
   Therapist: "You're a Therapist!",
   Go_To_Admin_View: 'GO TO ADMIN VIEW',
+  Activity_Category_Name: 'Activity Category Name',
+  Message: 'Message',
+  Message_Text: 'Message Text',
+  Full_Name: 'Full Name',
+  Created_Date: 'Created Date',
 };
 
 export default AppStrings;

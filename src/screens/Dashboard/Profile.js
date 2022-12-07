@@ -1,11 +1,12 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import React from 'react';
 import constants from '../../utils/constants';
 import CustomButton from '../../components/CustomButton';
-import AppStrings from '../../utils/Strings';
 import {useDispatch, useSelector} from 'react-redux';
 import moment from 'moment/moment';
 import {setLogout} from '../../redux/userDataReducer';
+import CustomHeader from '../../components/CustomHeader';
+import CustomBody from '../../components/CustomBody';
 
 const Profile = ({navigation}) => {
   const UserData = useSelector(e => e?.UserDataReducer?.user_details);
@@ -14,53 +15,68 @@ const Profile = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.imageView}>
-        <Image
-          source={
-            UserData?.profile_pic
-              ? {uri: UserData?.profile_pic}
-              : constants.Images.Profile
-          }
-          style={
-            UserData?.profile_pic ? styles.profileImage2 : styles.profileImage
-          }
-        />
-      </View>
-      <Text style={styles.valueText}>
-        {UserData?.name ? UserData?.name : ''}
-      </Text>
-      <Text style={styles.labelText}>{'Email'}</Text>
-      <Text style={styles.valueText}>
-        {UserData?.email ? UserData?.email : ''}
-      </Text>
-      <Text style={styles.labelText}>{'Phone Number'}</Text>
-      <Text style={styles.valueText}>
-        {' '}
-        {UserData?.phone_no ? UserData?.phone_no : ''}
-      </Text>
-      <Text style={styles.labelText}>{'Motivated Member Since'}</Text>
-      <Text style={styles.valueText}>
-        {UserData?.created_at
-          ? moment(UserData?.created_at).format('DD-MMM-YYYY')
-          : ''}
-      </Text>
-      <View style={{marginVertical: constants.Screen.Vertical(25)}} />
-      <CustomButton
-        BackgroundColor={constants.Colors.White}
-        Name={'LOG OUT'}
-        TextColor={constants.Colors.Primary}
-        logo={require('../../assets/power.png')}
-        tintColor={constants.Colors.Primary}
-        borderColor={constants.Colors.Primary}
-        customWidth={'50%'}
-        OnPress={() => {
-          dispatch(setLogout());
-          navigation.reset({
-            index: 0,
-            routes: [{name: 'Login'}],
-          });
-        }}
-      />
+      <CustomHeader props={1} />
+
+      <ScrollView>
+        <CustomBody onPress={() => {}} />
+        <View
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            paddingBottom: 20,
+          }}>
+          <View style={styles.imageView}>
+            <Image
+              source={
+                UserData?.profile_pic
+                  ? {uri: UserData?.profile_pic}
+                  : constants.Images.Profile
+              }
+              style={
+                UserData?.profile_pic
+                  ? styles.profileImage2
+                  : styles.profileImage
+              }
+            />
+          </View>
+          <Text style={styles.valueText}>
+            {UserData?.name ? UserData?.name : ''}
+          </Text>
+          <Text style={styles.labelText}>{'Email'}</Text>
+          <Text style={styles.valueText}>
+            {UserData?.email ? UserData?.email : ''}
+          </Text>
+          <Text style={styles.labelText}>{'Phone Number'}</Text>
+          <Text style={styles.valueText}>
+            {' '}
+            {UserData?.phone_no ? UserData?.phone_no : ''}
+          </Text>
+          <Text style={styles.labelText}>{'Motivated Member Since'}</Text>
+          <Text style={styles.valueText}>
+            {UserData?.created_at
+              ? moment(UserData?.created_at).format('DD-MMM-YYYY')
+              : ''}
+          </Text>
+          <View style={{marginVertical: constants.Screen.Vertical(25)}} />
+          <CustomButton
+            BackgroundColor={constants.Colors.White}
+            Name={'LOG OUT'}
+            TextColor={constants.Colors.Primary}
+            logo={require('../../assets/power.png')}
+            tintColor={constants.Colors.Primary}
+            borderColor={constants.Colors.Primary}
+            customWidth={'50%'}
+            OnPress={() => {
+              dispatch(setLogout());
+              navigation.reset({
+                index: 0,
+                routes: [{name: 'Login'}],
+              });
+            }}
+          />
+          <View style={{marginVertical: constants.Screen.Vertical(15)}} />
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -71,8 +87,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: constants.Colors.White,
-    // justifyContent: 'center',
-    alignItems: 'center',
   },
   imageView: {
     backgroundColor: constants.Colors.Light_Gray,
