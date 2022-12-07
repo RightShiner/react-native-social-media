@@ -7,6 +7,7 @@ export const Colors = {
   Black: '#000000',
   Primary: '#074EE8',
   Gray: '#677294',
+  Light_Gray: '#EEEEEE',
 };
 
 // Custom Fonts
