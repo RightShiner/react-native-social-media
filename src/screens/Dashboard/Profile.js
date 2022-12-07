@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, SafeAreaView} from 'react-native';
 import React from 'react';
 import constants from '../../utils/constants';
 import CustomButton from '../../components/CustomButton';
@@ -6,14 +6,15 @@ import AppStrings from '../../utils/Strings';
 import {useDispatch, useSelector} from 'react-redux';
 import moment from 'moment/moment';
 import {setLogout} from '../../redux/userDataReducer';
+import CustomStatusBar from '../../components/CustomStatusBar';
 
 const Profile = ({navigation}) => {
   const UserData = useSelector(e => e?.UserDataReducer?.user_details);
   const dispatch = useDispatch();
-  console.log('User Data: ', UserData);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <CustomStatusBar BGColor={constants.Colors.Primary} />
       <View style={styles.imageView}>
         <Image
           source={
@@ -61,7 +62,7 @@ const Profile = ({navigation}) => {
           });
         }}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -56,6 +56,8 @@ export const Images = {
   Profile: require('../assets/profile.png'),
   Black_Logo: require('../assets/Black_Logo.png'),
   Right_arrow: require('../assets/right_arrow.png'),
+  CheckBox_Selected: require('../assets/checkbox_selected.png'),
+  CheckBox_Unselected: require('../assets/checkbox_unselected.png'),
 };
 
 // Storage Key Id for Get/Set Values in Async Storage

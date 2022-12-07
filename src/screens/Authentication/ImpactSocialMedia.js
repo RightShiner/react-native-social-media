@@ -40,126 +40,26 @@ const ImpactSocialMedia = ({navigation, route}) => {
   const [qus23, setQus23] = useState(0);
   const [qus24, setQus24] = useState(0);
   const [qus25, setQus25] = useState(0);
-  const questionsArray = [
-    {
-      id: 1,
-      qus: AppStrings.ISM_Question_1,
-    },
-    {
-      id: 2,
-      qus: AppStrings.ISM_Question_2,
-    },
-    {
-      id: 3,
-      qus: AppStrings.ISM_Question_3,
-    },
-    {
-      id: 4,
-      qus: AppStrings.ISM_Question_4,
-    },
-    {
-      id: 5,
-      qus: AppStrings.ISM_Question_5,
-    },
-    {
-      id: 6,
-      qus: AppStrings.ISM_Question_6,
-    },
-    {
-      id: 7,
-      qus: AppStrings.ISM_Question_7,
-    },
-    {
-      id: 8,
-      qus: AppStrings.ISM_Question_8,
-    },
-    {
-      id: 9,
-      qus: AppStrings.ISM_Question_9,
-    },
-    {
-      id: 10,
-      qus: AppStrings.ISM_Question_10,
-    },
-    {
-      id: 11,
-      qus: AppStrings.ISM_Question_11,
-    },
-    {
-      id: 12,
-      qus: AppStrings.ISM_Question_12,
-    },
-    {
-      id: 13,
-      qus: AppStrings.ISM_Question_13,
-    },
-    {
-      id: 14,
-      qus: AppStrings.ISM_Question_14,
-    },
-    {
-      id: 15,
-      qus: AppStrings.ISM_Question_15,
-    },
-    {
-      id: 16,
-      qus: AppStrings.ISM_Question_16,
-    },
-    {
-      id: 17,
-      qus: AppStrings.ISM_Question_17,
-    },
-    {
-      id: 18,
-      qus: AppStrings.ISM_Question_18,
-    },
-    {
-      id: 19,
-      qus: AppStrings.ISM_Question_19,
-    },
-    {
-      id: 20,
-      qus: AppStrings.ISM_Question_20,
-    },
-    {
-      id: 21,
-      qus: AppStrings.ISM_Question_21,
-    },
-    {
-      id: 22,
-      qus: AppStrings.ISM_Question_22,
-    },
-    {
-      id: 23,
-      qus: AppStrings.ISM_Question_23,
-    },
-    {
-      id: 24,
-      qus: AppStrings.ISM_Question_24,
-    },
-    {
-      id: 25,
-      qus: AppStrings.ISM_Question_25,
-    },
-  ];
 
   useEffect(() => {
     //
   }, []);
 
-  const renderList = ({item}) => {
+  const renderList = ({item, index}) => {
     return (
       // Questions
-      item?.id === 25 ? (
+      item?.id === 34 ? (
         <>
           <View style={{marginVertical: constants.Screen.Vertical(5)}} />
-          <Text style={styles.questionText}>{item?.qus}</Text>
+          <Text style={styles.questionText}>{`* ${index + 1}. ${
+            item?.questions
+          }`}</Text>
           <View style={styles.optionRow}>
-            <TouchableOpacity onPress={() => setQus25(1)}>
+            <TouchableOpacity onPress={() => setQus25(item?.options[0]?.id)}>
               <Image
                 style={styles.option}
                 source={
-                  qus25 === 1
+                  qus25 === item?.options[0]?.id
                     ? constants.Images.Radio_Selected
                     : constants.Images.Radio_Unselected
                 }
@@ -170,11 +70,11 @@ const ImpactSocialMedia = ({navigation, route}) => {
             </Text>
           </View>
           <View style={styles.optionRow}>
-            <TouchableOpacity onPress={() => setQus25(2)}>
+            <TouchableOpacity onPress={() => setQus25(item?.options[1]?.id)}>
               <Image
                 style={styles.option}
                 source={
-                  qus25 === 2
+                  qus25 === item?.options[1]?.id
                     ? constants.Images.Radio_Selected
                     : constants.Images.Radio_Unselected
                 }
@@ -185,11 +85,11 @@ const ImpactSocialMedia = ({navigation, route}) => {
             </Text>
           </View>
           <View style={styles.optionRow}>
-            <TouchableOpacity onPress={() => setQus25(3)}>
+            <TouchableOpacity onPress={() => setQus25(item?.options[2]?.id)}>
               <Image
                 style={styles.option}
                 source={
-                  qus25 === 3
+                  qus25 === item?.options[2]?.id
                     ? constants.Images.Radio_Selected
                     : constants.Images.Radio_Unselected
                 }
@@ -203,7 +103,9 @@ const ImpactSocialMedia = ({navigation, route}) => {
       ) : (
         <>
           <View style={{marginVertical: constants.Screen.Vertical(5)}} />
-          <Text style={styles.questionText}>{item?.qus}</Text>
+          <Text style={styles.questionText}>{`* ${index + 1}. ${
+            item?.questions
+          }`}</Text>
           <View style={styles.optionRow}>
             <TouchableOpacity
               onPress={() => {
@@ -701,10 +603,10 @@ const ImpactSocialMedia = ({navigation, route}) => {
 
       {/* CUstom Question FlatList */}
       <FlatList
-        data={questionsArray}
+        data={route?.params?.AFData?.question}
         keyExtractor={(key, index) => key?.id}
         style={styles.scrollView}
-        renderItem={({item}) => renderList({item})}
+        renderItem={({item, index}) => renderList({item, index})}
         ListFooterComponent={listFooterComponent}
       />
     </SafeAreaView>
