@@ -6,13 +6,16 @@ import AppStrings from '../utils/Strings';
 const CustomHeader = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.headerView}>
-        <Text style={styles.headerText}>
-          {AppStrings.Social_Media_Case_Management}
-        </Text>
+      <View style={styles.container1}>
+        <View style={styles.headerView}>
+          <Text style={styles.headerText}>{AppStrings.Social_Media}</Text>
+        </View>
+        <View style={styles.headerView}>
+          <Text style={styles.headerText}>{AppStrings.Case_Management}</Text>
+        </View>
       </View>
       <View style={styles.imageView}>
-        <Image source={constants.Images.Logo} style={[styles.image]} />
+        <Image source={constants.Images.Black_Logo} style={[styles.image]} />
       </View>
     </View>
   );
@@ -26,39 +29,32 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     backgroundColor: constants.Colors.Primary,
-    padding: constants.Screen.Moderate(5),
+    padding: constants.Screen.Moderate(10),
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
   },
+  container1: {flexDirection: 'column'},
   headerView: {
     color: constants.Colors.Black,
     fontFamily: constants.Fonts.ExtraBold,
-    width: '65%',
+    width: '100%',
   },
   headerText: {
-    fontSize: constants.Screen.Moderate(16),
+    fontSize: constants.Screen.Moderate(15),
     color: constants.Colors.White,
     fontFamily: constants.Fonts.Regular,
-    width: '100%',
     textAlign: 'center',
-    alignItems: 'center',
-    fontSize: constants.Screen.Moderate(23),
-    fontWeight: '700',
-    fontFamily: '700',
-    minHeight: constants.Screen.Vertical(20),
-    // marginBottom: constants.Screen.Vertical(10),
+    fontWeight: 'bold',
+    fontFamily: constants.Fonts.ExtraBold,
+    minHeight: constants.Screen.Vertical(15),
   },
   imageView: {
-    // height: 50,
-    // width: 10,
-    backgroundColor: constants.Colors.Dark_Blue,
-    borderRadius: 50,
-    // justifyContent: 'center',
-    // alignItems: 'center',
+    marginLeft: 10,
   },
   image: {
-    height: 80,
-    width: 80,
+    height: 60,
+    width: 60,
     resizeMode: 'cover',
+    borderRadius: 100,
   },
 });
