@@ -14,14 +14,12 @@ const CustomBody = ({onPress}) => {
           <Text style={styles.headerText1}>{AppStrings.Therapist}</Text>
         </View>
       </View>
-      <View>
-        <View style={styles.headerView2}>
-          <View styles={{flex: 1}}></View>
-          <Text onPress={onPress} style={styles.headerText2}>
-            {AppStrings.Go_To_Admin_View}
-          </Text>
-          <Image source={constants.Images.Right_arrow} style={styles.icon} />
-        </View>
+
+      <View style={styles.headerView2}>
+        <Text onPress={onPress} style={styles.headerText2}>
+          {AppStrings.Go_To_Admin_View}
+        </Text>
+        <Image source={constants.Images.Right_arrow} style={styles.icon} />
       </View>
     </View>
   );
@@ -32,7 +30,7 @@ export default CustomBody;
 const styles = StyleSheet.create({
   container: {
     minHeight: constants.Screen.Vertical(10),
-    marginHorizontal: constants.Screen.Vertical(5),
+    marginHorizontal: 10,
     marginVertical: constants.Screen.Vertical(10),
     backgroundColor: constants.Colors.Pink,
     flexDirection: 'column',
@@ -60,7 +58,7 @@ const styles = StyleSheet.create({
     color: constants.Colors.Black,
     fontFamily: constants.Fonts.ExtraBold,
     marginLeft: 20,
-    marginTop: 10,
+    marginTop: 13,
   },
 
   headerText1: {
@@ -72,11 +70,8 @@ const styles = StyleSheet.create({
     minHeight: constants.Screen.Vertical(20),
   },
   headerView2: {
-    flex: 1,
-    backgroundColor: constants.Colors.Primary,
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    marginBottom: 20,
   },
   headerText2: {
     color: constants.Colors.Black,
@@ -87,8 +82,9 @@ const styles = StyleSheet.create({
   },
   icon: {
     height: 13,
-    width: 14,
+    width: 18,
     color: constants.Colors.Black,
-    margin: constants.Screen.Vertical(3),
+    marginTop: 3,
+    marginHorizontal: 4,
   },
 });

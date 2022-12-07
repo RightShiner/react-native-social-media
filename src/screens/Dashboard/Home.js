@@ -16,7 +16,7 @@ const Home = ({navigation}) => {
         backgroundColor: 'white',
       }}>
       <CustomStatusBar BGColor={constants.Colors.Primary} />
-      <CustomHeader />
+      <CustomHeader props={1} />
       <CustomBody onPress={() => {}} />
     </SafeAreaView>
   );

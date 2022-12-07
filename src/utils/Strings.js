@@ -62,6 +62,9 @@ export const AppStrings = {
   Therapist: "You're a Therapist!",
   Go_To_Admin_View: 'GO TO ADMIN VIEW',
   List_Empty_Text: 'Something went wrong...',
+  Activity_Category_Name: 'Activity Category Name',
+  Message: 'Message',
+  Message_Text: 'Message Text',
 };
 
 export default AppStrings;
