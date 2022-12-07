@@ -17,6 +17,8 @@ import {PostApi} from '../../Services/api.service';
 import {LOGIN} from '../../Services/ApiURL';
 import CustomLoader from '../../components/CustomLoader';
 import CustomAlertMessage from '../../components/CustomAlertMessage';
+import {setUserDetails} from '../../redux/userDataReducer';
+import {useDispatch} from 'react-redux';
 
 const Login = ({navigation}) => {
   const [keyboardStatus, setKeyboardStatus] = useState(false);
@@ -25,6 +27,7 @@ const Login = ({navigation}) => {
   const [loader, setLoader] = useState(false);
   const [visible, setVisible] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
+  const dispatch = useDispatch();
 
   // For hide button when keyboard appears and show button when keyboard dismiss
   useEffect(() => {
@@ -56,8 +59,9 @@ const Login = ({navigation}) => {
     PostApi(LOGIN, loginData, config)
       .then(response => {
         setLoader(false);
-        console.log('login Response: ', response);
+        // console.log('login Response: ', response);
         if (response?.status !== 0) {
+          dispatch(setUserDetails(response?.data));
           navigation.reset({
             index: 0,
             routes: [{name: 'TabNavigator'}],
