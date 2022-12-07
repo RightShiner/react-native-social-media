@@ -1,16 +1,11 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import CustomHeader from '../../components/CustomHeader';
 
 const Home = ({navigation}) => {
   return (
-    <View
-      style={{
-        flex: 1,
-        // backgroundColor: 'yellow',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <Text style={{color: 'black', fontSize: 25}}>Home</Text>
+    <View>
+      <CustomHeader />
     </View>
   );
 };

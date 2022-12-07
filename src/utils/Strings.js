@@ -172,6 +172,7 @@ export const AppStrings = {
     'Set the new password for your account so you can login and access all the features.',
   Update_Passeword: 'Update Password',
   Okay: 'OKAY',
+  Social_Media_Case_Management: 'Social Media Case Management',
 };
 
 export default AppStrings;
