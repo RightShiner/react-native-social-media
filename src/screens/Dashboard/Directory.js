@@ -6,7 +6,7 @@ const Directory = ({navigation}) => {
     <View
       style={{
         flex: 1,
-        // backgroundColor: 'yellow',
+        backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
       }}>

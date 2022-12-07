@@ -1,5 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import CustomHeader from '../../components/CustomHeader';
+import CustomBody from '../../components/CustomBody';
 import {useSelector} from 'react-redux';
 
 const Home = ({navigation}) => {
@@ -10,11 +12,10 @@ const Home = ({navigation}) => {
     <View
       style={{
         flex: 1,
-        // backgroundColor: 'yellow',
-        justifyContent: 'center',
-        alignItems: 'center',
+        backgroundColor: 'white',
       }}>
-      <Text style={{color: 'black', fontSize: 25}}>Home</Text>
+      <CustomHeader />
+      <CustomBody onPress={() => {}} />
     </View>
   );
 };

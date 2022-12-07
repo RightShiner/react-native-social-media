@@ -8,6 +8,7 @@ export const Colors = {
   Primary: '#074EE8',
   Gray: '#677294',
   Light_Gray: '#EEEEEE',
+  Pink: '#fff2e1',
 };
 
 // Custom Fonts
@@ -53,6 +54,8 @@ export const Images = {
   Directory: require('../assets/directory.png'),
   Chat: require('../assets/message.png'),
   Profile: require('../assets/profile.png'),
+  Black_Logo: require('../assets/Black_Logo.png'),
+  Right_arrow: require('../assets/right_arrow.png'),
 };
 
 // Storage Key Id for Get/Set Values in Async Storage
