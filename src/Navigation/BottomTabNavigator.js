@@ -7,8 +7,10 @@ import Directory from '../screens/Dashboard/Directory';
 import constants from '../utils/constants';
 import {View, Image, Text} from 'react-native';
 import AppStrings from '../utils/Strings';
+import {useSelector} from 'react-redux';
 
 export const TabNavigator = () => {
+  const UserData = useSelector(e => e?.UserDataReducer?.user_details);
   const Tab = createBottomTabNavigator();
 
   return (
@@ -32,7 +34,10 @@ export const TabNavigator = () => {
                         height: 35,
                         width: 35,
                         resizeMode: 'cover',
-                        tintColor: focused
+                        borderRadius: 50,
+                        tintColor: UserData?.profile_pic
+                          ? ''
+                          : focused
                           ? constants.Colors.Primary
                           : constants.Colors.Gray,
                       }
@@ -54,6 +59,8 @@ export const TabNavigator = () => {
                     ? constants.Images.Directory
                     : route.name === 'Chat'
                     ? constants.Images.Chat
+                    : UserData?.profile_pic
+                    ? {uri: UserData?.profile_pic}
                     : constants.Images.Profile
                 }
               />

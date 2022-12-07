@@ -1,4 +1,11 @@
-import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  SafeAreaView,
+} from 'react-native';
 import React from 'react';
 import constants from '../../utils/constants';
 import CustomButton from '../../components/CustomButton';
@@ -14,9 +21,9 @@ const Profile = ({navigation}) => {
   const dispatch = useDispatch();
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <CustomStatusBar BGColor={constants.Colors.Primary} />
       <CustomHeader props={1} />
-
       <ScrollView>
         <CustomBody onPress={() => {}} />
         <View
@@ -77,7 +84,7 @@ const Profile = ({navigation}) => {
           <View style={{marginVertical: constants.Screen.Vertical(15)}} />
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

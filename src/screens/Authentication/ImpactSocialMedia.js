@@ -65,9 +65,7 @@ const ImpactSocialMedia = ({navigation, route}) => {
                 }
               />
             </TouchableOpacity>
-            <Text style={styles.optionText}>
-              {AppStrings.ISM_Question_New_Option1}
-            </Text>
+            <Text style={styles.optionText}>{item?.options[0]?.answers}</Text>
           </View>
           <View style={styles.optionRow}>
             <TouchableOpacity onPress={() => setQus25(item?.options[1]?.id)}>
@@ -80,9 +78,7 @@ const ImpactSocialMedia = ({navigation, route}) => {
                 }
               />
             </TouchableOpacity>
-            <Text style={styles.optionText}>
-              {AppStrings.ISM_Question_New_Option2}
-            </Text>
+            <Text style={styles.optionText}>{item?.options[1]?.answers}</Text>
           </View>
           <View style={styles.optionRow}>
             <TouchableOpacity onPress={() => setQus25(item?.options[2]?.id)}>
@@ -95,9 +91,7 @@ const ImpactSocialMedia = ({navigation, route}) => {
                 }
               />
             </TouchableOpacity>
-            <Text style={styles.optionText}>
-              {AppStrings.ISM_Question_New_Option3}
-            </Text>
+            <Text style={styles.optionText}>{item?.options[2]?.answers}</Text>
           </View>
         </>
       ) : (
@@ -214,9 +208,7 @@ const ImpactSocialMedia = ({navigation, route}) => {
                 }
               />
             </TouchableOpacity>
-            <Text style={styles.optionText}>
-              {AppStrings.ISM_Question_Option1}
-            </Text>
+            <Text style={styles.optionText}>{item?.options[0]?.answers}</Text>
           </View>
           <View style={styles.optionRow}>
             <TouchableOpacity
@@ -326,9 +318,7 @@ const ImpactSocialMedia = ({navigation, route}) => {
                 }
               />
             </TouchableOpacity>
-            <Text style={styles.optionText}>
-              {AppStrings.ISM_Question_Option2}
-            </Text>
+            <Text style={styles.optionText}>{item?.options[1]?.answers}</Text>
           </View>
           <View style={styles.optionRow}>
             <TouchableOpacity
@@ -438,9 +428,7 @@ const ImpactSocialMedia = ({navigation, route}) => {
                 }
               />
             </TouchableOpacity>
-            <Text style={styles.optionText}>
-              {AppStrings.ISM_Question_Option3}
-            </Text>
+            <Text style={styles.optionText}>{item?.options[2]?.answers}</Text>
           </View>
           <View style={styles.optionRow}>
             <TouchableOpacity
@@ -550,9 +538,7 @@ const ImpactSocialMedia = ({navigation, route}) => {
                 }
               />
             </TouchableOpacity>
-            <Text style={styles.optionText}>
-              {AppStrings.ISM_Question_Option4}
-            </Text>
+            <Text style={styles.optionText}>{item?.options[3]?.answers}</Text>
           </View>
         </>
       )

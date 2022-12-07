@@ -102,7 +102,7 @@ const BackgroundInformation = ({navigation, route}) => {
         qusEight2,
       ],
     };
-    console.log('BI DATA: ', backgroundInformationData);
+    // console.log('BI DATA: ', backgroundInformationData);
     navigation.navigate('ImpactSocialMedia', {
       props: route?.params?.props ? route?.params?.props : '',
       AFData: assessmentFormData[1],

@@ -1,19 +1,22 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import React from 'react';
 import CustomHeader from '../../components/CustomHeader';
-
 import {useDispatch, useSelector} from 'react-redux';
 import {setLogout} from '../../redux/userDataReducer';
 import CustomMessageButton from '../../components/CustomMessageButton';
+import CustomStatusBar from '../../components/CustomStatusBar';
+import constants from '../../utils/constants';
+
 const Chat = ({navigation}) => {
   const dispatch = useDispatch();
 
   return (
-    <View
+    <SafeAreaView
       style={{
         flex: 1,
         backgroundColor: 'white',
       }}>
+      <CustomStatusBar BGColor={constants.Colors.Primary} />
       <CustomHeader
         props={3}
         OnPress1={() => {
@@ -33,7 +36,7 @@ const Chat = ({navigation}) => {
           <CustomMessageButton />
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
